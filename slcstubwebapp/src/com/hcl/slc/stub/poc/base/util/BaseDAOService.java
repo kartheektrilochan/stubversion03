@@ -9,10 +9,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 
+/**
+ * @author Kartheek.Tk
+ */
 public abstract class BaseDAOService<T> implements Serializable {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	public EntityManager entityManager;

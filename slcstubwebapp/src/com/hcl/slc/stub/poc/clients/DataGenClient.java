@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.apache.commons.beanutils.DynaProperty;
 
+import com.hcl.slc.stub.poc.base.util.ConfigurationUtil;
 import com.hcl.slc.stub.poc.controller.StubparamController;
 import com.hcl.slc.stub.poc.dynamic.DynamicBeanCreator;
 import com.hcl.slc.stub.poc.dynamic.DynamicPropertyCreator;
@@ -19,15 +20,17 @@ public class DataGenClient {
 
 	/**
 	 * @param args
+	 * @author Kartheek.Tk
 	 */
 	public static void main(String[] args) {
 		try {
-			FileInputStream propfile = new FileInputStream(
-					"config\\config.properties");
-			Properties prop = new Properties();
-			prop.load(propfile);
+			
+			/*Reading Configurations*/
+			ConfigurationUtil util=new ConfigurationUtil();
+			Properties prop=util.readConfigurations();
 			String destination = (String) prop.get("destination");
 			System.out.println("Destination:" + destination);
+			
 			StubparamController bean = new StubparamController();
 			List<Stubparamconfig> stublist = bean.getFullDetails();
 

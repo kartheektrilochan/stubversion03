@@ -16,6 +16,9 @@ import org.apache.camel.impl.DefaultCamelContext;
 
 import com.hcl.slc.stub.poc.entity.Address;
 
+/**
+ * @author Kartheek.Tk
+ */
 public class CamelUtil {
 
 	public void sendToRoutes(CamelContext camelcontext,List<Address> cmdlist, String destination) throws Exception {

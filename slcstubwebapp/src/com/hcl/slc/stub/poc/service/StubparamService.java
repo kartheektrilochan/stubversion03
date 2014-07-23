@@ -6,7 +6,9 @@ import java.util.Map;
 import com.hcl.slc.stub.poc.daos.StubparamDAO;
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
 
-
+/**
+ * @author Kartheek.Tk
+ */
 public class StubparamService {
 
 	

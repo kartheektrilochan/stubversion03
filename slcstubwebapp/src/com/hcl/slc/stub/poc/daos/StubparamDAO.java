@@ -5,7 +5,9 @@ import java.util.Map;
 
 import com.hcl.slc.stub.poc.base.util.BaseDAOService;
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
-
+/**
+ * @author Kartheek.Tk
+ */
 public class StubparamDAO extends BaseDAOService<Stubparamconfig>{
 	
 	public StubparamDAO() {

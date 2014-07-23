@@ -13,7 +13,9 @@ import org.fluttercode.datafactory.impl.DataFactory;
 
 import com.hcl.slc.stub.poc.controller.StubparamController;
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
-
+/**
+ * @author Kartheek.Tk
+ */
 public class DynamicFieldDataGen {
 
 	public Object parseFileds(Stubparamconfig stubparamconfig) {

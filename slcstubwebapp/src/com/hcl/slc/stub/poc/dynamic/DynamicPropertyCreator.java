@@ -6,7 +6,9 @@ import org.apache.commons.beanutils.DynaProperty;
 import org.apache.log4j.Logger;
 
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
-
+/**
+ * @author Kartheek.Tk
+ */
 public class DynamicPropertyCreator {
 
 	static Logger logger = Logger.getLogger(DynamicPropertyCreator.class);

@@ -11,7 +11,9 @@ import org.apache.commons.beanutils.DynaProperty;
 import org.apache.log4j.Logger;
 
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
-
+/**
+ * @author Kartheek.Tk
+ */
 public class DynamicBeanCreator {
 	static Logger logger = Logger.getLogger(DynamicBeanCreator.class);
 	public Object createDymanicBean(DynaProperty[] prop,List<Stubparamconfig> stublist) {

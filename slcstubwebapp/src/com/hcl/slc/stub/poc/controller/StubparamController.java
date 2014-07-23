@@ -5,7 +5,9 @@ import java.util.List;
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
 import com.hcl.slc.stub.poc.service.StubparamService;
 
-
+/**
+ * @author Kartheek.Tk
+ */
 public class StubparamController {
 
 		private StubparamService service;

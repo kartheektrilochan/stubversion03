@@ -5,7 +5,9 @@ import java.util.Map;
 
 import com.hcl.slc.stub.poc.base.util.BaseDAOService;
 import com.hcl.slc.stub.poc.entity.Address;
-
+/**
+ * @author Kartheek.Tk
+ */
 public class AddressDAO extends BaseDAOService<Address>{
 	
 	public AddressDAO() {

@@ -10,7 +10,9 @@ import org.apache.log4j.Logger;
 
 import com.hcl.slc.stub.poc.entity.Address;
 import com.hcl.slc.stub.poc.entity.Stubparamconfig;
-
+/**
+ * @author Kartheek.Tk
+ */
 
 public class FieldSetterGetterBean {
 	static Logger logger = Logger.getLogger(FieldSetterGetterBean.class);
