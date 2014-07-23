@@ -30,7 +30,8 @@ public class DataGenClient {
 			Properties prop=util.readConfigurations();
 			String destination = (String) prop.get("destination");
 			System.out.println("Destination:" + destination);
-			
+			int records_no=Integer.parseInt((String)prop.get("records"));
+			/*Reading the stubparam table configurations*/
 			StubparamController bean = new StubparamController();
 			List<Stubparamconfig> stublist = bean.getFullDetails();
 
@@ -39,17 +40,21 @@ public class DataGenClient {
 					.createDynamicProperty(stublist);
 
 			DynamicBeanCreator beancreator = new DynamicBeanCreator();
-			Object obj1 = beancreator.createDymanicBean(dynaprop, stublist);
-
+			Object obj =null; 
 			FieldSetterGetterBean fieldsetterbean = new FieldSetterGetterBean();
-			Address address = (Address) fieldsetterbean.assignValues2Fields(
-					obj1, stublist);
 			List<Address> addresslist = new ArrayList<Address>();
-			addresslist.add(address);
+			for(int i=0;i<records_no;i++)
+			{
+				obj=beancreator.createDymanicBean(dynaprop, stublist);
+				Address address = (Address) fieldsetterbean.assignValues2Fields(obj, stublist);
+				addresslist.add(address);
+			}	
+			System.out.println("Total no of records created:"+addresslist.size());
+			
 			AddressService service=new AddressService();
 			for(Address a:addresslist)
 			{
-				service.save(a);
+			//	service.save(a);
 			}
 			/*CamelClient client=new CamelClient();
 			client.sendToMQ(addresslist, destination);*/

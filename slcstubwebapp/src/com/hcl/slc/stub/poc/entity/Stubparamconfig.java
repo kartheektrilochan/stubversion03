@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name="Stubparamconfig",schema="WASADMIN")
+@Table(name="STUB_PARAMCONFIG",schema="STUBFRAMEWORK")
 @NamedQuery(name="Stubparamconfig.findAll", query="SELECT s FROM Stubparamconfig s")
 public class Stubparamconfig implements Serializable {
 	private static final long serialVersionUID = 1L;
