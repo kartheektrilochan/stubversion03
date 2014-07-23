@@ -49,7 +49,11 @@ public class StubparamService {
 			Map<Integer, Object> inputMap, Class className) {
 		return objdao.findAllBySQLQuery(sql, inputMap, className);
 	}
-
+	
+	public List<Stubparamconfig> findAllByNamedSQLQuery(String sql,
+			Map<Integer, Object> inputMap, Class className) {
+		return objdao.findAllByNamedQuery(sql, inputMap, className);
+	}
 	
 	public List<Object> findAllBySQLQueryObj(String sql,
 			Map<Integer, Object> inputMap) {

@@ -31,14 +31,16 @@ public class DataGenClient {
 			String destination = (String) prop.get("destination");
 			System.out.println("Destination:" + destination);
 			int records_no=Integer.parseInt((String)prop.get("records"));
+			
 			/*Reading the stubparam table configurations*/
 			StubparamController bean = new StubparamController();
 			List<Stubparamconfig> stublist = bean.getFullDetails();
 
+			/*Creating dynamic properties*/
 			DynamicPropertyCreator propcreator = new DynamicPropertyCreator();
-			DynaProperty[] dynaprop = propcreator
-					.createDynamicProperty(stublist);
-
+			DynaProperty[] dynaprop = propcreator.createDynamicProperty(stublist);
+			
+			/*Creating dynamic Bean*/
 			DynamicBeanCreator beancreator = new DynamicBeanCreator();
 			Object obj =null; 
 			FieldSetterGetterBean fieldsetterbean = new FieldSetterGetterBean();
@@ -46,7 +48,7 @@ public class DataGenClient {
 			for(int i=0;i<records_no;i++)
 			{
 				obj=beancreator.createDymanicBean(dynaprop, stublist);
-				Address address = (Address) fieldsetterbean.assignValues2Fields(obj, stublist);
+				Address address = (Address) fieldsetterbean.assignValues2Fields(obj, stublist,Address.class);
 				addresslist.add(address);
 			}	
 			System.out.println("Total no of records created:"+addresslist.size());

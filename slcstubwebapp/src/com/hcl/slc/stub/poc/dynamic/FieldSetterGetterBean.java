@@ -17,11 +17,11 @@ import com.hcl.slc.stub.poc.entity.Stubparamconfig;
 public class FieldSetterGetterBean {
 	static Logger logger = Logger.getLogger(FieldSetterGetterBean.class);
 
-	public Object assignValues2Fields(Object obj,List<Stubparamconfig> stublist) {
+	public Object assignValues2Fields(Object obj,List<Stubparamconfig> stublist,Class clstype) {
 		try {
 
-			Class cls = Address.class;
-			Address add = new Address();
+			Class cls = clstype;
+			Object target_obj = clstype.newInstance();
 			Field[] fields = cls.getDeclaredFields();
 			logger.info("fields.length:" + fields.length);
 			System.out.println("fields.length:" + fields.length);
@@ -58,11 +58,11 @@ public class FieldSetterGetterBean {
 						{
 							value=BeanUtils.getProperty(obj,s.getSourcefieldname());
 						}
-						fields[k].set(add, value);
+						fields[k].set(target_obj, value);
 					}
 				}
 			}
-			return add;
+			return target_obj;
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -70,6 +70,9 @@ public class FieldSetterGetterBean {
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();
 		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return stublist;

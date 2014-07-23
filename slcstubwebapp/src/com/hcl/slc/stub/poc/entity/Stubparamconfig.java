@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 /**
@@ -16,7 +17,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="STUB_PARAMCONFIG",schema="STUBFRAMEWORK")
-@NamedQuery(name="Stubparamconfig.findAll", query="SELECT s FROM Stubparamconfig s")
+@NamedQueries(
+		{@NamedQuery(name="Stubparamconfig.findAll", query="SELECT s FROM Stubparamconfig s"),
+		 @NamedQuery(name="Stubparamconfig.findbytablename", query="SELECT s FROM Stubparamconfig s where s.tablename=?1")})
 public class Stubparamconfig implements Serializable {
 	private static final long serialVersionUID = 1L;
 
